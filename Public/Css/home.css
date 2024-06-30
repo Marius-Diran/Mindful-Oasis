@@ -122,3 +122,34 @@ nav{
   color: rgb(255, 255, 255);
   border: none;
 }
+
+.blog-flex1{
+  display: flex;
+}
+
+.blog-1{
+  border: 1px solid red;
+  width: 50%;
+  margin: 0 0 0 5vw
+}
+
+.blog1-img_container{
+  width: 90%;
+}
+
+.blog1-img1{
+  width: 100%;
+}
+
+.blog-2{
+  width: 50%;
+  margin: 0 0 0 5vw;
+}
+
+.blog2-img_container{
+  width: 90%;
+}
+
+.blog1-img2{
+  width: 100%;
+}
