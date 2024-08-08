@@ -12,7 +12,6 @@ body{
 }
 
 .grand-container{
-  border: 1px solid red;
   width: 98%;
   margin: 0 auto;
 }
@@ -21,7 +20,7 @@ nav{
   position: fixed;
   display: flex;
   width: 100%;
-  margin: 4vh 0;
+  top: 4vh;
 }
 
 .logo-box{
@@ -71,4 +70,8 @@ nav{
 .nav-contact_btn:hover{
   background-color: rgba(0, 137, 123, 0.8);
   cursor: pointer;
+}
+
+.first-blog{
+  margin: 20vh auto;
 }
