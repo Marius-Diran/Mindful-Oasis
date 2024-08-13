@@ -23,6 +23,8 @@ nav{
   top: 0;
   background-color: rgb(255, 255, 255);
   box-shadow: 5px 0 10px 1px rgb(0, 0, 0);
+  z-index: 10;
+  align-items: center;
 }
 
 .logo-box{
@@ -39,7 +41,7 @@ nav{
 }
 
 .list-box{
-  margin: 2vh 5vw 2vh 44vw;
+  margin: 2vh 5vw 2vh 40vw;
 }
 
 .nav-list{
@@ -74,6 +76,53 @@ nav{
 .nav-contact_btn:hover{
   background-color: rgba(0, 137, 123, 0.8);
   cursor: pointer;
+}
+
+.blog-cover-intro{
+  background-image: url('/Images/dariusz-sankowski-3OiYMgDKJ6k-unsplash.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.intro-contents h1{
+  font-size: 4rem;
+  text-align: center;
+  padding: 40vh 0 0;
+  color: rgb(255, 255, 255);
+  font-family: "Great Vibes", cursive;
+}
+
+.intro-contents .small{
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+}
+
+.intro-contents .no-fill{
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(240, 240, 240);
+}
+
+.blog-btn{
+  margin: 4vh 44vw;
+  width: 9%;
+  height: 5.5vh;
+  font-family: "Roboto", sans-serif;
+  font-size: .95rem;
+  border: none;
+  background-color: rgb(0, 137, 123);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.blog-btn:hover{
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 137, 123);
 }
 
 .first-blog{
