@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
   margin: 0;
@@ -126,12 +127,16 @@ nav{
 }
 
 .first-blog{
-  margin: 20vh auto 10vh;
+  margin: 15vh auto 10vh;
+}
+
+.intro-h1{
+  font-size: 2.5rem;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .first-blog_flex{
   display: flex;
-  border: 1px solid red;
 }
 
 .first-blog h1{
@@ -139,7 +144,7 @@ nav{
 }
 
 .main-story{
-  width: 55%;
+  width: 60%;
   margin: 8vh 0 0 6vw;
 }
 
@@ -152,12 +157,12 @@ nav{
 }
 
 .side-stories{
-  border: 1px solid red;
-  width: 35%;
+  width: 30%;
+  margin: 8vh 0 0 5vw;
 }
 
 .sidestory-img1_box{
-  width: 40%;
+  width: 75%;
 }
 
 .side-img1{
