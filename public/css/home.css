@@ -191,6 +191,10 @@ nav{
 }
 
 .inspire-btn:hover{
+  background-color: rgba(0, 137, 123, 0.7);
+}
+
+.inspire-btn:hover{
   cursor: pointer;
 }
 
@@ -201,7 +205,31 @@ nav{
 }
 
 .main-story p{
-  margin: 3vh 3vw;
+  margin: 3vh 3vw 0;
   font-size: 1.1rem;
   font-family: "Roboto", sans-serif;
+  line-height: 3.3vh;
+}
+
+.fullstory-btn{
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  margin: 0.2vh 0 4vh 46.7vw;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.fa-arrow-right-long{
+  color: rgb(0, 137, 123);
+  margin: 0 0 0 0.2vw;
+  transition: all 350ms ease-out;
+}
+
+.fullstory-btn:hover .fa-arrow-right-long{
+  cursor: pointer;
+  margin: 0 0 0 0.6vw;
+}
+
+.fullstory-btn:hover{
+  cursor: pointer;
 }
