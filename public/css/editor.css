@@ -11,3 +11,41 @@
   margin: 52vh 0 0 95vw;
   cursor: pointer;
 }
+
+.blog{
+  width: 80%;
+  min-width: 40%;
+  height: 12vh;
+  display: block;
+  margin: 5vh auto;
+  padding: 4vh 0;
+}
+
+textarea::-webkit-scrollbar{
+  width: 2%;
+}
+
+textarea::-webkit-scrollbat-thumb{
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.blog-title,
+.article{
+  width: 100%;
+  min-height: 12.5vh;
+  height: auto;
+  outline: none;
+  font-size: 3rem;
+  font-weight: 600;
+  color: rgb(45, 45, 45);
+  resize: none;
+  border: none;
+  padding: 10px;
+  background: rgb(240, 240, 240);
+}
+
+.blog-title::placeholder,
+.article::placeholder{
+  color: #2d2d2d;
+}
