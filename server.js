@@ -21,7 +21,7 @@ app.get('/editor', (req, res) => {
 })
 
 // upload link
-app.post('/uploads', (req, res) => {
+app.post('/upload', (req, res) => {
   let file = res.files.image;
   let date = new Date();
   // image name
@@ -35,7 +35,7 @@ app.post('/uploads', (req, res) => {
       throw err
     }else{
       // image upload path
-      res.json(`uploads/${imagename}`)
+      res.json(`upload/${imagename}`)
     }
   })
 })
