@@ -22,12 +22,12 @@ app.get('/editor', (req, res) => {
 
 // upload link
 app.post('/upload', (req, res) => {
-  let file = res.files.image;
+  let file = req.files.image;
   let date = new Date();
   // image name
   let imagename = date.getDate() + date.getTime() + file.name;
   // image upload path
-  let path = 'public/uploads/' + imagename
+  let path = 'public/uploads/' + imagename;
 
   // create upload
   file.mv(path, (err, result) => {
@@ -35,7 +35,7 @@ app.post('/upload', (req, res) => {
       throw err
     }else{
       // image upload path
-      res.json(`upload/${imagename}`)
+      res.json(`uploads/${imagename}`)
     }
   })
 })
