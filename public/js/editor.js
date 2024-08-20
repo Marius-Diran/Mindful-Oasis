@@ -1,5 +1,5 @@
 const blogTitleField = document.querySelector('.blog-title');
-const article = document.querySelector('.article');
+const articleField = document.querySelector('.article');
 
 // banner
 const bannerImage = document.querySelector('#banner-upload');
@@ -13,6 +13,10 @@ bannerImage.addEventListener('change', () => {
   uploadImage(bannerImage, 'banner');
 });
 
+uploadInput.addEventListener('change', () => {
+  uploadImage(uploadInput, 'image');
+})
+
 const uploadImage = (uploadFile, uploadType) => {
   const [file] = uploadFile.files;
   if(file && file.type.includes('image')){
@@ -24,8 +28,16 @@ const uploadImage = (uploadFile, uploadType) => {
       body: formdata
     }).then(res => res.json())
     .then(data => {
-      bannerPath = `${location.origin}/${data}`;
-      banner.style.backgroundImage = `url("${bannerPath}")`;
+      if(uploadType == 'image'){
+        addImage(data, file.name)
+      } else{
+        bannerPath = `${location.origin}/${data}`;
+        banner.style.backgroundImage = `url("${bannerPath}")`;
+      }
     })
   }
+}
+
+const addImage = (imagepath, alt) => {
+  let curPos =
 }
