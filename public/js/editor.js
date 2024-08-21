@@ -39,5 +39,7 @@ const uploadImage = (uploadFile, uploadType) => {
 }
 
 const addImage = (imagepath, alt) => {
-  let curPos =
+  let curPos = articleField.selectionStart;
+  let textToInsert = `\r![${alt}](${imagepath})\r`;
+  articleField.value = articleField.value.slice(0, curPos) + textToInsert +  articleField.value.slice(curPos);
 }

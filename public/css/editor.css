@@ -97,5 +97,14 @@ textarea::-webkit-scrollbat-thumb{
 
 .upload-btn{
   margin: 0 0 1vh 1vw;
+  width: 9%;
+  height: 5vh;
+  padding: 1.2vh 0 0 1.4vw;
+  /* text-align: center; */
+  color: rgb(255, 255, 255);
+  background-color: rgb(134, 134, 134);
   cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  outline: none;
 }
