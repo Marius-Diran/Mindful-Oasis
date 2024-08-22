@@ -35,6 +35,8 @@ const uploadImage = (uploadFile, uploadType) => {
         banner.style.backgroundImage = `url("${bannerPath}")`;
       }
     })
+  } else {
+    alert("Upload images only");
   }
 }
 
@@ -43,3 +45,24 @@ const addImage = (imagepath, alt) => {
   let textToInsert = `\r![${alt}](${imagepath})\r`;
   articleField.value = articleField.value.slice(0, curPos) + textToInsert +  articleField.value.slice(curPos);
 }
+
+publishBtn.addEventListener('click', () => {
+  if(articleField.value.lenght && blogTitleField.value.lenght){
+    // generating id
+    let letters = "abcdefghijklmnopqrstuvwxyz"
+    let blogTitle = blogTitleField.value.split(" ").join("-");
+    let id = '';
+    for(let i = 0; i < 4; i++){
+      id += letters[Math.floor(Math.random() * letters.length)];
+    }
+
+    // setting docName
+    let docName = `${blogTitle}-${id}`;
+    let date = new Date(); //for published date
+
+    // access firebase with db variable
+    db.collections("blogs").doc(docName).set({
+      
+    })
+  }
+})

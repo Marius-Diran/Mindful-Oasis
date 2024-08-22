@@ -9,3 +9,6 @@ const firebaseConfig = {
 
 
 const app = initializeApp(firebaseConfig);
+
+// init the database
+let db = app.firestore();
