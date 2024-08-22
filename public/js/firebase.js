@@ -1,3 +1,5 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyDAK8vF-R_38TIEzuR1gMuBz7pmKldOEUI",
   authDomain: "marius-blog-website.firebaseapp.com",
@@ -11,4 +13,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // init the database
-let db = app.firestore();
+const db = getDatabase(app);
+

@@ -46,6 +46,8 @@ const addImage = (imagepath, alt) => {
   articleField.value = articleField.value.slice(0, curPos) + textToInsert +  articleField.value.slice(curPos);
 }
 
+let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 publishBtn.addEventListener('click', () => {
   if(articleField.value.lenght && blogTitleField.value.lenght){
     // generating id
@@ -62,7 +64,16 @@ publishBtn.addEventListener('click', () => {
 
     // access firebase with db variable
     db.collections("blogs").doc(docName).set({
-      
+      title: blogTitleField.value,
+      article: articleField.value,
+      bannerImage: bannerPath,
+      publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+    })
+    .then(() => {
+      console.log('date entered');
+    })
+    .catch((err) => {
+      console.error(err);
     })
   }
 })
