@@ -6,7 +6,7 @@ const bannerImage = document.querySelector('#banner-upload');
 const banner = document.querySelector('.banner');
 let bannerPath;
 
-const publishBtn = document.querySelector('.publish.btn');
+const publishBtn = document.querySelector('.publish-btn');
 const uploadInput = document.querySelector('#image-upload');
 
 bannerImage.addEventListener('change', () => {
@@ -49,7 +49,7 @@ const addImage = (imagepath, alt) => {
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 publishBtn.addEventListener('click', () => {
-  if(articleField.value.lenght && blogTitleField.value.lenght){
+  if(articleField.value.length && blogTitleField.value.length){
     // generating id
     let letters = "abcdefghijklmnopqrstuvwxyz"
     let blogTitle = blogTitleField.value.split(" ").join("-");
@@ -62,8 +62,8 @@ publishBtn.addEventListener('click', () => {
     let docName = `${blogTitle}-${id}`;
     let date = new Date(); //for published date
 
-    // access firebase with db variable
-    db.collections("blogs").doc(docName).set({
+    // access firestore with db variable
+    db.collection("blogs").doc(docName).set({
       title: blogTitleField.value,
       article: articleField.value,
       bannerImage: bannerPath,
