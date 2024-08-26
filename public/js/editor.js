@@ -1,5 +1,5 @@
-const blogTitleField = document.querySelector('.blog-title');
-const articleField = document.querySelector('.article');
+const blogTitleField = document.querySelector('#blog-title-space');
+const articleField = document.querySelector('#article-space');
 
 // banner
 const bannerImage = document.querySelector('#banner-upload');
@@ -63,12 +63,13 @@ publishBtn.addEventListener('click', () => {
     let date = new Date(); //for published date
 
     // access firestore with db variable
-    db.collection("blogs").doc(docName).set({
+    colRef.doc(docName).set({
       title: blogTitleField.value,
       article: articleField.value,
       bannerImage: bannerPath,
       publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
     })
+    getDocs(colRef)
     .then(() => {
       console.log('date entered');
     })
@@ -76,4 +77,8 @@ publishBtn.addEventListener('click', () => {
       console.error(err);
     })
   }
+
+  // publishBtn.addEventListener('submit', (e) => {
+  //   e.preventDefault()
+  // })
 })
