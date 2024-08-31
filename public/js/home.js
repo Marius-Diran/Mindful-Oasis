@@ -22,7 +22,7 @@ const firestore = getFirestore(app);
 // collecton ref
 const colRef = collection(firestore, 'blogs');
 
-const blogSection = document.querySelector('.first-blog');
+const blogSection = document.querySelector('.blog-sec');
 
 getDocs(colRef).then((snapshot) => {
   snapshot.docs.forEach((doc) => {
@@ -35,13 +35,11 @@ getDocs(colRef).then((snapshot) => {
 
 
 const createBlog = (blog) => {
-  let data = blog.data();
   blogSection.innerHTML += `
-  <div class="main-story">
-    <div class="main-img_box"><img class="main-img" src="${data.bannerImage}"></div>
-    <button class="inspire-btn">Inspire</button>
-    <h1>${data.title.substring(0, 100) + '...'}</h1>
-    <p>${data.article.substring(0, 1000) + '...'}</p>
+  <div class="blog-card">
+    <div class="main-img_box"><img class="main-img" src="${blog.bannerImage}"></div>
+    <h1>${blog.title.substring(0, 100) + '...'}</h1>
+    <p>${blog.article.substring(0, 200) + '...'}</p>
     <a href="/${blog.id}"><button class="fullstory-btn">Full Story <i class="fa-solid fa-arrow-right-long"></i></button></a>
   </div>
   `;

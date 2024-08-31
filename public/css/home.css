@@ -132,79 +132,55 @@ nav{
   color: rgb(0, 137, 123);
 }
 
-.first-blog{
-  margin: 15vh auto 10vh;
-}
-
 .intro-h1{
   font-size: 2.5rem;
   font-family: "Roboto Condensed", sans-serif;
 }
 
-.first-blog_flex{
-  display: flex;
+.blog-sec{
+  margin: 15vh auto 10vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 8vw;
 }
 
-.first-blog h1{
-  margin: 0 6vw;
+.blog-card{
+  width: 65%;
+  margin: 8vh 0 0 4vw;
 }
 
-.main-story{
-  width: 60%;
-  margin: 8vh 0 0 6vw;
-  background-color: rgb(224, 224, 224);
-}
+/* .blog-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 8vw;
+} */
 
 .main-img_box{
   width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .main-img{
   width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
-.side-stories{
-  width: 30%;
-  margin: 8vh 0 0 5vw;
-}
-
-.sidestory-img1_box{
+.blog-card{
   width: 75%;
+  margin: 0 0 0 6vw;
 }
 
-.side-img1{
-  width: 100%;
-}
-
-.inspire-btn{
-  border: none;
-  background-color: rgb(0, 137, 123);
-  width: 11%;
-  height: 4.5vh;
-  margin: 3vh 3vw 2vh;
-  color: rgb(255, 255, 255);
-  border-radius: 2px;
-  font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.inspire-btn:hover{
-  background-color: rgba(0, 137, 123, 0.7);
-}
-
-.inspire-btn:hover{
-  cursor: pointer;
-}
-
-.main-story h1{
-  margin: 1vh 3vw;
+.blog-card h1{
+  margin: 1vh 1vw;
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
 }
 
-.main-story p{
-  margin: 3vh 3vw 0;
+.blog-card p{
+  margin: 3vh 1vw 0;
   font-size: 1.1rem;
   font-family: "Roboto", sans-serif;
   line-height: 3.3vh;
@@ -214,7 +190,7 @@ nav{
   border: none;
   background: transparent;
   font-size: 1.1rem;
-  margin: 0.2vh 0 4vh 46.7vw;
+  margin: 4vh 0 0 1vw;
   color: rgba(0, 0, 0, 0.7);
 }
 
