@@ -35,7 +35,6 @@ getDocs(colRef)
     console.log(err.message);
   })
 
-const homePage = document.querySelector('#home-link');
 const blogTitleField = document.querySelector('#blog-title-space');
 const articleField = document.querySelector('#article-space');
 

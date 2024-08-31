@@ -1,3 +1,7 @@
+.blog-banner{
+  margin: 11.5vh auto 0;
+}
+
 .blog, .article{
   position: relative;
   height: fit-content;
@@ -23,4 +27,9 @@
 .published span{
   font-weight: 700;
   font-style: normal;
+}
+
+.article *{
+  margin: 2vh 0;
+  color: rgb(45, 45, 45);
 }
