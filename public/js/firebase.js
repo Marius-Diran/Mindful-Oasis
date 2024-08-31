@@ -84,54 +84,12 @@ const addImage = (imagepath, alt) => {
   articleField.value = articleField.value.slice(0, curPos) + textToInsert +  articleField.value.slice(curPos);
 }
 
-// generating id
-// let letters = "abcdefghijklmnopqrstuvwxyz"
-// let blogTitle = blogTitleField.value.split(" ").join("-");
-// let id = '';
-// for(let i = 0; i < 4; i++){
-//   id += letters[Math.floor(Math.random() * letters.length)];
-// }
-
-// setting docName
-// let docName = `${blogTitle}-${id}`;
-
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 let date = new Date();
 
-// publishBtn.addEventListener('click',(e) =>{
-//   addDoc(colRef, {
-//     title: blogTitleField.value,
-//     article: articleField.value,
-//     bannerImage: bannerPath,
-//     publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
-//   })
-//   .then(() => {
-//     location.href = "/index.html";
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   })
-  
-//   getDocs(colRef)
-//   .then(() => {
-//     console.log('date entered');
-//   })
-//   .catch((err) => {
-//     console.error(err)
-//   })
-
-// })
-
-
 publishBtn.addEventListener('click', async (e) =>{
 
-  // addDoc(colRef, {
-  //   title: blogTitleField.value,
-  //   article: articleField.value,
-  //   bannerImage: bannerPath,
-  //   publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
-  // })
-
+  // generating custom ID
   let letters = "abcdefghijklmnopqrstuvwxyz"
   let blogTitle = blogTitleField.value.split(" ").join("-");
   let id = '';
@@ -156,7 +114,7 @@ publishBtn.addEventListener('click', async (e) =>{
     console.log('Document written with custom ID:', customId);
 
     // Redirect after successful posting
-    location.href = "/editor.html";
+    location.href = `/${customId}`;
 
 } catch (err) {
     console.error('Error adding document with custom ID:', err);
