@@ -42,6 +42,14 @@ app.post('/upload', (req, res) => {
 
 const port = process.env.PORT || 3000;
 
+app.get('/:blog', (req, res) => {
+  res.sendFile(path.join(initial_path, "blog.html"));
+})
+
+app.use((req, res) => {
+  res.json("404");
+})
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 })

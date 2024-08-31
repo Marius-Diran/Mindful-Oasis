@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { 
   getFirestore, collection, getDocs,
-  addDoc
+  addDoc, doc, setDoc
 } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -35,6 +35,7 @@ getDocs(colRef)
     console.log(err.message);
   })
 
+const homePage = document.querySelector('#home-link');
 const blogTitleField = document.querySelector('#blog-title-space');
 const articleField = document.querySelector('#article-space');
 
@@ -83,19 +84,87 @@ const addImage = (imagepath, alt) => {
   articleField.value = articleField.value.slice(0, curPos) + textToInsert +  articleField.value.slice(curPos);
 }
 
+// generating id
+// let letters = "abcdefghijklmnopqrstuvwxyz"
+// let blogTitle = blogTitleField.value.split(" ").join("-");
+// let id = '';
+// for(let i = 0; i < 4; i++){
+//   id += letters[Math.floor(Math.random() * letters.length)];
+// }
+
+// setting docName
+// let docName = `${blogTitle}-${id}`;
+
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 let date = new Date();
 
-publishBtn.addEventListener('click',(e) =>{
-  addDoc(colRef, {
-    title: blogTitleField.value,
-    article: articleField.value,
-    bannerImage: bannerPath,
-    publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
-  });
+// publishBtn.addEventListener('click',(e) =>{
+//   addDoc(colRef, {
+//     title: blogTitleField.value,
+//     article: articleField.value,
+//     bannerImage: bannerPath,
+//     publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+//   })
+//   .then(() => {
+//     location.href = "/index.html";
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   })
+  
+//   getDocs(colRef)
+//   .then(() => {
+//     console.log('date entered');
+//   })
+//   .catch((err) => {
+//     console.error(err)
+//   })
+
+// })
+
+
+publishBtn.addEventListener('click', async (e) =>{
+
+  // addDoc(colRef, {
+  //   title: blogTitleField.value,
+  //   article: articleField.value,
+  //   bannerImage: bannerPath,
+  //   publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+  // })
+
+  let letters = "abcdefghijklmnopqrstuvwxyz"
+  let blogTitle = blogTitleField.value.split(" ").join("-");
+  let id = '';
+  for(let i = 0; i < 4; i++){
+    id += letters[Math.floor(Math.random() * letters.length)];
+  }
+
+  const customId = `${blogTitle}-${id}`;
+
+  try {
+    // Create a document reference with the custom ID
+    const docRef = doc(colRef, customId);  // Add the custom ID here
+
+    // Set the document with the custom ID
+    await setDoc(docRef, {
+        title: blogTitleField.value,
+        article: articleField.value,
+        bannerImage: bannerPath,
+        publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+    });
+
+    console.log('Document written with custom ID:', customId);
+
+    // Redirect after successful posting
+    location.href = "/editor.html";
+
+} catch (err) {
+    console.error('Error adding document with custom ID:', err);
+}
+
   getDocs(colRef)
   .then(() => {
-    console.log('date entered')
+    console.log('date entered');
   })
   .catch((err) => {
     console.error(err)

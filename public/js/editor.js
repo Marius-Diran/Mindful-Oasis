@@ -82,3 +82,35 @@ publishBtn.addEventListener('click', () => {
   //   e.preventDefault()
   // })
 })
+
+
+
+publishBtn.addEventListener('click', async (e) =>{
+
+  e.defaultPrevent()
+
+  const customId = `${blogTitleField.value.replace(/\s+/g, '-').toLowerCase()}-${Date.now()}`;
+
+  try{
+    await setDoc(docRef, {
+      title: blogTitleField.value,
+      article: articleField.value,
+      bannerImage: bannerPath,
+      publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+  });
+
+    location.href = "/index.html"
+
+  }catch (err){
+    console.log(err);
+  }
+
+  getDocs(colRef)
+  .then(() => {
+    console.log('date entered');
+  })
+  .catch((err) => {
+    console.error(err)
+  })
+
+})
