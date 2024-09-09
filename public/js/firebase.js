@@ -13,6 +13,14 @@ const firebaseConfig = {
   appId: "1:1039381804904:web:6e0d07010395eb6bb488dd"
 };
 
+const admin = require('firebase-admin');
+const serviceAccount = require('./path/to/serviceAccountKey.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: 'marius-blog-8b621'
+});
+
 // init firebase
 const app = initializeApp(firebaseConfig);
 
