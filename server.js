@@ -10,6 +10,10 @@ const app = express();
 app.use(express.static(initial_path));
 app.use(fileupload());
 
+module.exports = (req, res) => {
+  app(req, res);
+};
+
 // route for the index/home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(initial_path, "index.html"));
@@ -40,8 +44,9 @@ app.post('/upload', (req, res) => {
   })
 })
 
-const port = process.env.PORT || 3000;
+const port = 5000;
 
+// route for the blog
 app.get('/:blog', (req, res) => {
   res.sendFile(path.join(initial_path, "blog.html"));
 })

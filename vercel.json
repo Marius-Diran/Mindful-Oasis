@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/:blog", "dest": "public/blog.html" },
+    { "src": "/editor", "dest": "public/editor.html" },
+    { "src": "/(.*)", "dest": "server.js" }
+  ]
+}
